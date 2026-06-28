@@ -252,7 +252,7 @@ qalc_init(void)
 		close(qalc.in[1]);
 		close(qalc.out[0]);
 		prctl(PR_SET_PDEATHSIG, SIGTERM);
-		execl("/usr/bin/qalc", "qalc", "-c0", "-t", NULL);
+		execlp("qalc", "qalc", "-c0", "-t", NULL);
 		die("execl qalc failed");
 	} else { /* parent */
 		close(qalc.in[0]);
